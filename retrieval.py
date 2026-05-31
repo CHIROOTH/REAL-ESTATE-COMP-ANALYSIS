@@ -10,8 +10,8 @@ from typing import List, Optional
 from datetime import datetime, timezone
 from pathlib import Path
 
-DATA_PATH = "cleaned_canada_housing_data.csv"
-OUTPUT_PATH = "similarity_results.json"
+DATA_PATH = "data/cleaned_canada_housing_data.csv"
+OUTPUT_PATH = "data/similarity_results.json"
 K      = 5 
 W_LOC  = 0.4
 W_FEAT = 0.6

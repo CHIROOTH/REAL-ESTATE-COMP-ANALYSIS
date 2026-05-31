@@ -1,7 +1,7 @@
 import pandas as pd
 
 # read the cleaned canada csv file
-df = pd.read_csv('canada_housing_data.csv')
+df = pd.read_csv('data/canada_housing_data.csv')
 # get the total number of rows before cleaning duplicates
 total_before_cleaning_duplicates = df.shape[0]
 # get the total number of duplicates
@@ -33,7 +33,7 @@ total_after_cleaning_missing_values_columns = df_no_missing_values.shape[0]
 print(f"Total after cleaning missing values columns: {total_after_cleaning_missing_values_columns}")
 # save the cleaned dataframe to a csv file
 # df_no_missing_values.to_csv('cleaned_canada_housing_data.csv', index=False)
-df_cleaned.to_csv('cleaned_canada_housing_data.csv', index=False)
+df_cleaned.to_csv('data/cleaned_canada_housing_data.csv', index=False)
 
 print("remaining columns: ", df_no_missing_values.columns.tolist())
 # print("shape after removing missing values: ", df_no_missing_values.shape)

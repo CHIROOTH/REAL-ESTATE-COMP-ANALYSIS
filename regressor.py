@@ -104,7 +104,7 @@ def sanitize(obj):
 
 
 def main():
-    with open("similarity_results.json") as f:
+    with open("data/similarity_results.json") as f:
         raw = json.load(f)
     
     if not os.path.exists("figures"):
@@ -329,7 +329,7 @@ def main():
         },
         "query_results": query_results,
     }
-    with open("valuation_results.json", "w") as f:
+    with open("data/valuation_results.json", "w") as f:
         json.dump(sanitize(output), f, indent=2)
 
     print("\nDone.")
