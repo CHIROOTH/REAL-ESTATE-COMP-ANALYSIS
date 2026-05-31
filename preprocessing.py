@@ -32,9 +32,9 @@ df_no_missing_values = df_no_duplicates.drop(columns=cols_with_missing_values, e
 total_after_cleaning_missing_values_columns = df_no_missing_values.shape[0]
 print(f"Total after cleaning missing values columns: {total_after_cleaning_missing_values_columns}")
 # save the cleaned dataframe to a csv file
-# df_no_missing_values.to_csv('cleaned_canada_housing_data.csv', index=False)
-df_cleaned.to_csv('cleaned_canada_housing_data.csv', index=False)
+df_no_missing_values.to_csv('cleaned_canada_housing_data.csv', index=False)
+# df_cleaned.to_csv('cleaned_canada_housing_data.csv', index=False)
 
 print("remaining columns: ", df_no_missing_values.columns.tolist())
-# print("shape after removing missing values: ", df_no_missing_values.shape)
-print("shape after removing missing values: ", df_cleaned.shape)
+print("shape after removing missing values: ", df_no_missing_values.shape)
+# print("shape after removing missing values: ", df_cleaned.shape)
