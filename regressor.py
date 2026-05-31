@@ -1,3 +1,4 @@
+import os
 import json
 import math
 import warnings
@@ -105,7 +106,10 @@ def sanitize(obj):
 def main():
     with open("similarity_results.json") as f:
         raw = json.load(f)
-
+    
+    if not os.path.exists("figures"):
+        os.makedirs("figures")
+    
     records  = raw["results"]
     metadata = raw.get("metadata", {})
     K        = int(metadata.get("k", 5))
@@ -242,7 +246,7 @@ def main():
     scatter_ax(ax1[1], y_val.values, g_val_pred, g_val_m,
                "Global XGBoost — Validation", model_colors["XGBoost Global"])
     fig1.tight_layout()
-    fig1.savefig("global_model_results.png", dpi=150, bbox_inches="tight")
+    fig1.savefig("figures/global_model_results.png", dpi=150, bbox_inches="tight")
     plt.close(fig1)
 
     # Fig 2 — Local models: 2 splits × N models scatter grid
@@ -259,7 +263,7 @@ def main():
             scatter_ax(ax, acts, pa, get_metrics(acts, pa),
                        f"{name}\n({split})", model_colors[name])
     fig2.tight_layout()
-    fig2.savefig("local_model_scatter.png", dpi=150, bbox_inches="tight")
+    fig2.savefig("figures/local_model_scatter.png", dpi=150, bbox_inches="tight")
     plt.close(fig2)
 
     # Fig 3 — Local models: val vs test bar comparison
@@ -308,7 +312,7 @@ def main():
         ax.set_ylabel(ylabel, fontsize=10); ax.set_title(ylabel, fontsize=11, fontweight="bold")
         ax.grid(axis="y", linestyle="--", alpha=0.4); ax.set_axisbelow(True)
     fig4.tight_layout()
-    fig4.savefig("all_models_comparison.png", dpi=150, bbox_inches="tight")
+    fig4.savefig("figures/all_models_comparison.png", dpi=150, bbox_inches="tight")
     plt.close(fig4)
 
     # ── JSON output ───────────────────────────────────────────────────────────
@@ -328,13 +332,8 @@ def main():
     with open("valuation_results.json", "w") as f:
         json.dump(sanitize(output), f, indent=2)
 
-    print("\nDone. Outputs:")
-    print("  global_model_results.png    — feature importances + global scatter")
-    print("  local_model_scatter.png     — per-model scatter (val & test)")
-    print("  local_model_comparison.png  — local models val vs test bars")
-    print("  all_models_comparison.png   — all 5 models test set comparison")
-    print("  valuation_results.json      — metrics, importances, per-query predictions & neighbours")
-
+    print("\nDone.")
+    
 
 if __name__ == "__main__":
     main()
