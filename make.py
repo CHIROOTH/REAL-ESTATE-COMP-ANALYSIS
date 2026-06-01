@@ -5,6 +5,7 @@ scripts = [
     "preprocessing.py",
     "retrieval.py",
     "regressor.py",
+    "explanation.py"
 ]
 
 for script in scripts:
