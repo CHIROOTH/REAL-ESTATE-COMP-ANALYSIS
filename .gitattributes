@@ -1,1 +1,2 @@
 similarity_results.json filter=lfs diff=lfs merge=lfs -text
+DEMO.mp4 filter=lfs diff=lfs merge=lfs -text
