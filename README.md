@@ -192,6 +192,7 @@ The current pipeline is a strong foundation, but several improvements would make
 
 - **Sam call:** did not call Sam, worked with my understanding of the problem. Also tried to call Sam but did not get a response, hence proceded with a rough understanding.
 - **Demo video:** [DEMO](DEMO.mp4)
+- [LINK TO VIDEO](https://drive.google.com/file/d/1h_2qs6s4Ibyj8RUzYue4v46w6YuPaDm7/view?usp=sharing)
 - **Submit:** [kv-ai-engineer-hiring.vercel.app/submit](https://kv-ai-engineer-hiring.vercel.app/submit)
 - **Deadline:** Sun May 31, 2026 · 9:59 PM MST
 
